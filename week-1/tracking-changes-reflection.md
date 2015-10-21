@@ -37,7 +37,9 @@ git merge master
 git push origin feature-branch
 ```
 Make a Pull Request
+
 Merge Changes
+
 Delete Branch
 ```
 git checkout master
