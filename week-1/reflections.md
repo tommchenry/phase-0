@@ -10,24 +10,34 @@ A shell is a text-based command line for interacting with an operating system an
 
 *-pwd*
 >This means "print working directory" and it shows you the directory and system you're currently in.
+
 *-ls*
 >This is short for "list" and it lists the files in a directory.
+
 *-mv*
 >This is short for "move" and it moves a file from one place to another.
+
 *-cd*
-.This is short for "change directory" and it changes your current directory to a directory you specify.
+>This is short for "change directory" and it changes your current directory to a directory you specify.
+
 *-../*
 >This means a directory above the current directory you're in. You can string them together to move back up a whole bunch of directories in the tree.
+
 *-touch*
 .This creates an empty file.
+
 *-mkdir*
 >This is short for "make directory" and it creates a directory.
+
 *-less*
 >This displays the contents of a file onto the screen one page at a time, letting you move through a lot of text.
+
 *-rmdir*
 >This is short for "remove directory" and it deletes a (empty) directory.
+
 *-rm*
 >This is short for "remove" and it deletes a file.
+
 *-help*
 >This shows you a manual page on whatever command you ask about.
 
