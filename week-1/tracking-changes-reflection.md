@@ -24,8 +24,10 @@
 
 ###Commit Cheat Sheet
 
-```git add THE_FILENAME_TO_ADD
-git commit -m "Leaves a good commit message."```
+```
+git add THE_FILENAME_TO_ADD
+git commit -m "Leaves a good commit message."
+```
 
 ###Pull Request Cheat Sheet
 
