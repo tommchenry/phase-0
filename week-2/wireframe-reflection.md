@@ -1,7 +1,7 @@
 ##Index Wireframe
-![Index Wireframe](img/wireframe-index.png)
+![Index Wireframe](imgs/wireframe-index.png)
 ##Blog Wireframe
-![Blog Wireframe](img/wireframe-blog-index.png)
+![Blog Wireframe](imgs/wireframe-blog-index.png)
 
 ##What is a wireframe?
 
