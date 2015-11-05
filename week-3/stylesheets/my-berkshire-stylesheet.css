@@ -1,0 +1,95 @@
+html {
+  background-color: #FFFFFF;
+  color: #000080;
+}
+
+a:link{
+    color:#800080;
+}
+
+a:visited{
+     color:#FF0000;
+}
+
+header {
+    text-align:center;
+    padding: 0px 0px 20px 0px;
+    border-bottom: 1px solid gray;
+}
+
+header h2{
+    text-transform:uppercase;
+    font-size:24pt;
+}
+
+header h2,h3,h4 {
+    padding:0px;
+    margin:0px;
+}
+
+h2:first-letter{
+    font-size: 36pt;
+}
+
+.links {
+
+}
+
+.links p {
+    font-size: 10pt;
+}
+
+
+.col1 {
+    float:left;
+    width: 50%;
+    padding: 10px 0px 10px 0px;
+}
+
+.col1 li{
+    padding: 10px 0px 10px 0px;
+}
+
+.col2 li{
+     padding: 10px 0px 10px 0px;
+}
+
+.col2 {
+    float:left;
+    width: 50%;
+    padding: 10px 0px 10px 0px;
+}
+
+.geico {
+    font-size:9pt;
+    clear:both;
+    text-align:center;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid gray;
+}
+
+.legal {
+    font-size:10pt;
+    border-bottom: 1px solid gray;
+}
+
+footer p {
+    font-size: 9pt;
+}
+
+/*
+What is important to know when linking an external file (like a stylesheet) to an HTML file?
+  It's important to know the relative path to where the external stylesheet will reside. Likewise it's also important to have a consistent directory structure for your stylesheets that can be easily maintained if the site grows or is redesigned.
+
+What tricks did you use to help you with positioning? How hard was it to get the site as you wanted it?
+  We beat our heads against the wall pretty hard trying to split the unordered list into two columns. We eventually figured out that we had to actually split the HTML of the list. We wound up needing to wrap those <ul>s in <div>s in order to get the floats to work correctly. We also struggled to get both Berkshire and Hathaway to have large first letters like the actual site without cheating it. We eventually gave up on this part.
+
+What CSS did you use to modify the element style (like size, color, etc.)
+  We used border-bottom and border-top to replace the <hr> tags and styled them to try to match the <hr> style as best as we could. We used the width property to keep the unordered lists at half the width of the site so they could be floated. We also used text-transform to make all of Berkshire Hathaway capitalized.
+
+Did you modify the HTML to include classes or ids? If so, which did you choose and why? If you didn't, how would you know which one to add to your HTML?
+  We included some classes in our HTML page. We wrapped both halves of the unordered list in divs with a special class as well as wrapping the entire links section in a div with its own class. We did this to be able to edit the styling on those links specifically, although later I'm seeing a lot of ways we could have simplified this. We also gave unique classes to the Geico ad and the e-mail section above the footer in order to specifically style these sections.
+
+When you compared your site to the actual code base, which do you think had cleaner code that followed best practices and why?
+  I think our site had much cleaner code (which with more time we could have made cleaner still) and follows much better practices. The actual site has no stylesheet whatsoever. What styling there is is specified inline with all sorts of deprecated tags from old versions of HTML (e.g. valign, size, and link) rather than using CSS. One of the most striking differences is in the lists of links which are two unordered lists in our version, but in the actual site is a table with rows for each pair of links, each of which is also a separate unordered list. Whew!
+*/
