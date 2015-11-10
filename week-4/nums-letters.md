@@ -46,10 +46,10 @@ puts 10 * 365 * 24 * 60
 
 >The only thing that was a little strange on this challenge was that at first I kept trying to add my solution code under the RSpec code, which produced all sorts of errors. Otherwise the manipulation of numbers with basic mathematical operators is all very standard.
 
-##Exercises Code
+##Exercises
 
-[defining-variables.rb](4.2.1 Defining Variables Code)
+[4.2.1 Defining Variables Code](defining-variables.rb)
 
-[simple-string.rb](4.2.2 Simple String Methods)
+[4.2.2 Simple String Methods](simple-string.rb)
 
-[basic-math.rb](4.2.3 Local Variables and Basic Arithmetical Expressions)
+[4.2.3 Local Variables and Basic Arithmetical Expressions](basic-math.rb)
