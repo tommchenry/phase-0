@@ -24,9 +24,8 @@ How do you run an RSpec file from the command line?
 What was confusing about this material? What made sense?
   I remember most of this material from the Codecademy exercises that were required to do the admission interview. The one thing I struggled with was trying to get too cute on my first pass at some exercises and answer them with as few lines as possible, when I needed to slow down, break them into smaller working pieces, and then refactor. Doing it wrong helped make that workflow make more sense, for one thing.
 
-4.2.2
+4.2.2 Solution:
   https://github.com/tommchenry/phase-0/blob/master/week-4/address/my_solution.rb
-4.2.3
-
-
+4.2.3 Solution:
+  https://github.com/tommchenry/phase-0/blob/master/week-4/math/my_solution.rb
 ```
