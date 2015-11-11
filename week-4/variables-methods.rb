@@ -10,7 +10,7 @@ fav_num = gets.chomp
 fav_num = fav_num.to_i + 1
 puts "Hmmm... I don't know, have you considered " + fav_num.to_s + ", though?"
 
-```
+=begin
 How do you define a local variable?
   A local variable is defined by giving a name in lowercase, hyphens or underscores, no spaces. You assign it a value using a single equal sign and the value you'd like to keep, whether it's a float, integer, or string.
 How do you define a method?
@@ -28,4 +28,4 @@ What was confusing about this material? What made sense?
   https://github.com/tommchenry/phase-0/blob/master/week-4/address/my_solution.rb
 4.2.3 Solution:
   https://github.com/tommchenry/phase-0/blob/master/week-4/math/my_solution.rb
-```
+=end
