@@ -1,6 +1,6 @@
 # Calculate a Grade
 
-# I worked on this challenge by myself, with: Matthew Oppenheimer.
+# I worked on this challenge with Matthew Oppenheimer.
 
 
 # Your Solution Below
