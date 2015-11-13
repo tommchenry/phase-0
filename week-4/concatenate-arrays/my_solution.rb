@@ -12,16 +12,10 @@
 #   Save it to the container
 # Return the container
 
+#OR You can just add one array to the other array
 
 # Your Solution Below
 
 def array_concat(array_1, array_2)
-  full_array = []
-  array_1.each do |i|
-    full_array.push i
-  end
-  array_2.each do |i|
-    full_array.push i
-  end
-  return full_array
+  return array_1 + array_2
 end
