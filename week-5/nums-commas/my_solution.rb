@@ -25,24 +25,34 @@
 # RETURN the string
 
 # 1. Initial Solution
-def separate_comma(integer)
-  integer = integer.to_s.reverse.split("")
-  comma_number = []
-  for place in 0..integer.length
-    comma_number.push(integer[place])
-    if (place.to_i + 1) % 3 == 0 && place < integer.length - 1
-      comma_number.push(",")
-    end
-  end
-  p comma_number.join.reverse
-end
+# def separate_comma(integer)
+#   integer = integer.to_s.reverse.split("")
+#   comma_number = []
+#   for place in 0..integer.length
+#     comma_number.push(integer[place])
+#     if (place.to_i + 1) % 3 == 0 && place < integer.length - 1
+#       comma_number.push(",")
+#     end
+#   end
+#   p comma_number.join.reverse
+# end
 
 # separate_comma(1000)
 # separate_comma(10000)
 # separate_comma(100000)
 # separate_comma(1000000)
 # 2. Refactored Solution
-
+def separate_comma(integer)
+  integer = integer.to_s.reverse.split("")
+  comma_number = []
+  for place in 0..integer.length
+    comma_number << integer[place]
+    if (place.to_i + 1) % 3 == 0 && place < integer.length - 1
+      comma_number << ","
+    end
+  end
+  p comma_number.join.reverse
+end
 
 
 
