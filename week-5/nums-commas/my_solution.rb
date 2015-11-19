@@ -37,23 +37,15 @@
 #   p comma_number.join.reverse
 # end
 
-# separate_comma(1000)
-# separate_comma(10000)
-# separate_comma(100000)
-# separate_comma(1000000)
 # 2. Refactored Solution
 def separate_comma(integer)
   integer = integer.to_s.reverse.split("")
-  comma_number = []
-  for place in 0..integer.length
-    comma_number << integer[place]
-    if (place.to_i + 1) % 3 == 0 && place < integer.length - 1
-      comma_number << ","
+  integer.length.times do |place|
+    if (place + 1) % 3 == 0 && place < integer.length - 1
+      integer[place] = integer[place] + ","
     end
   end
-  p comma_number.join.reverse
+  p integer.join.reverse
 end
-
-
 
 # 3. Reflection
