@@ -16,6 +16,9 @@
 class Die
   def initialize(sides)
     # code goes here
+    unless sides > 0
+      raise ArgumentError.new("Your die can only have a positive number of sides!")
+    end
     @sides = sides
   end
 
