@@ -41,6 +41,29 @@
 # Don't forget to check on initialization for a card length
 # # of exactly 16 digits
 
+# class CreditCard
+
+#   def initialize (number)
+#     @number = number.to_s
+#     raise ArgumentError unless @number.length == 16
+#   end
+
+#   def check_card
+#     number_array = @number.split(//)
+#     number_array.map! {|x| x.to_i }
+#   index = -2
+#     while index.abs <= number_array.length
+#       number_array[index] = number_array[index] * 2
+#       index -= 2
+#       end
+#     new_array = number_array.join.split(//)
+#     new_array.map! {|num| num.to_i}
+#     new_array.reduce(:+) % 10 == 0
+#   end
+# end
+
+# # Refactored Solution
+
 class CreditCard
 
   def initialize (number)
@@ -49,39 +72,23 @@ class CreditCard
   end
 
   def check_card
-    number_array = @number.split(//)
-    number_array.map! {|x| x.to_i }
-  index = -2
-    while index.abs <= number_array.length
-      number_array[index] = number_array[index] * 2
-      index -= 2
-      end
-    new_array = number_array.join.split(//)
-    new_array.map! {|num| num.to_i}
-    new_array.reduce(:+) % 10 == 0
+    number_array = @number.split(//).map {|x| x.to_i }
+    number_array = number_array.each_with_index.map do |num,index|
+    index % 2 == 0 ? num * 2 : num
+  end
+    number_array = number_array.join.split(//)
+    number_array.map! {|num| num.to_i}.reduce(:+) % 10 == 0
   end
 end
 
-
-#test = [4, 4, 0, 8, 0, 4, 1, 2, 3, 4, 5, 6, 7, 9, 0, 6]
-
- #   temp_array = number_array.each_index {|x| number_array[x] * 2 if x % 2 == 0 }
-  #  temp_array
-
-
-#new = test.each_with_index {|x| test[x] * 2 }
-#p new
-  #if x % 2 == 0 }
-# card = CreditCard.new(4563960122001999)
-# p card.check_card
-
-# # Refactored Solution
-
-
-
-
-
-
-
-
 # # Reflection
+
+# What was the most difficult part of this challenge for you and your pair?
+#   The most difficult part of this challenge was definitely getting every other array value to double starting at the last value. We disagreed some about approaches and struggled to find a method that would produce easily what we were looking for, so we wound up settling on a while loop for our initial method.
+# What new methods did you find to help you when you refactored?
+#  Passing .each_with_index to .map was the most helpful thing. We'd already worked out to use .reduce to sum up all the values in the array, but figuring out how to get an each that produced an array and gave us access to the indexes was key.
+# What concepts or learnings were you able to solidify in this challenge?
+#  This challenge helped me to understand the usefulness of .map and .each_with_index and that ending with the comparator will produce the return value without an explicit return statement. It also made some strong distinctions between what kinds of methods work on which types of objects in that we passed in a giant integer, had to turn it into a string so that we could turn it into an array so that we could iterate through it easily, but then back to integers to perform math on them.
+
+
+
