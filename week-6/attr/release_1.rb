@@ -76,3 +76,11 @@ puts
 puts "---- printing all profile info -----"
 sleep 0.8
 instance_of_profile.print_info  #Let's see the final product now. We changed all of the values using setters, so everything is different than before.
+
+#What are these methods doing?
+#  .initialize is the standard way of constructing a new object that is an instance of the class (here the class Profile). This method takes no arguments and has hard-coded values for @age @name and @occupation
+#  .print_info is a method to print all the information in the object (with a few blank lines for prettiness)
+#  .what_is_age, .what_is_name, .what_is_occupation return the value of the instance variables @age, @name, and @occupation respectively.
+#  .change_my_age, .change_my_name, .change_my_occupation are methods that accept a new value and assign that as the new value of the instance variables for the object
+#How are they modifying or returning the value of instance variables?
+#  First, .initialize sets the initial values for age, name, and occupation (The Kim Set) when the instance_of_profile object is created. Then a p is run on .what_is_age, .what_is_name, and what_is_occupation with a pause and a delimiter between each one in order to print the value of those instance variables to the screen. Then .change_my_age, change_my_name, and change_my_occupation methods are run on instance_of_profile to change their values from the Kim Set to the Taylor Set. Then the .print_info method is run on the instance_of_profile object which puts all the values to the screen with line breaks.

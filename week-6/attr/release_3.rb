@@ -74,3 +74,9 @@ puts
 puts "---- printing all profile info -----"
 sleep 0.8
 instance_of_profile.print_info
+# What changed between the last release and this release?
+#   Now an .attr_writer has been added for the instance variable @age. The .change_my_age method is no longer needed and has been commented out.
+# What was replaced?
+#   The .change_my_age method has been replaced with a simple .age method which then writes to the instance variable @age.
+# Is this code simpler than the last?
+#   This code is simpler than the last code because it removes an entire method by simply using .attr_writer. Using the .age method to change the value of age is also more intuitive and easier to maintain than the .change_my_age method.

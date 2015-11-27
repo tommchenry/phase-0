@@ -77,3 +77,10 @@ puts
 puts "---- printing all profile info -----"
 sleep 0.8
 instance_of_profile.print_info
+
+# What changed between the last release and this release?
+#   Since the last release, attr_reader and attr_writer have been combined into attr_accessor. Also both .change_my_age and .what_is_age are still commented out.
+# What was replaced?
+#   Both attr_reader and attr_writer were replaced with attr_accessor, and it provides the same functions as both but combined into a single line.
+# Is this code simpler than the last?
+#   This code simplifies the code by allowing both attr_reader and attr_writer to be combined as attr_accessor.

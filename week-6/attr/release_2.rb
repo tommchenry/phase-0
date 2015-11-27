@@ -79,3 +79,10 @@ puts
 puts "---- printing all profile info -----"
 sleep 0.8
 instance_of_profile.print_info
+
+# What changed between the last release and this release?
+#   The .what_is_age method has been removed and the attr_reader has been added.
+# What was replaced?
+#   The .what_is_age method was removed and the attr_reader for age was added to the code. By adding the attr_reader, now the value of @age can be displayed by calling the .age method on the object.
+# Is this code simpler than the last?
+#   Yes, adding the attr_reader to the class removes an entire method from the class. This also simplifies the code later by accessing the value of @age with the .age method rather than the .what_is_age method, which is both longer and not quite as intuitive.
