@@ -111,6 +111,19 @@ class BingoBoard
       puts " --------------------------"
     end
   end
+
+  def create_board
+    # Traditionally the pattern is like this: "B" (numbers 1–15), "I" (numbers 16–30), "N" (numbers 31–45), "G" (numbers 46–60), and "O" (numbers 61–75) with a free space in the middle.
+    @bingo_board = []
+    @bingo_board << (1..15).to_a.sample(5)
+    @bingo_board << (16..30).to_a.sample(5)
+    @bingo_board << (31..45).to_a.sample(5)
+    @bingo_board << (46..60).to_a.sample(5)
+    @bingo_board << (61..75).to_a.sample(5)
+    @bingo_board = @bingo_board.transpose
+    @bingo_board[2][2] = "X"
+    display_board
+  end
 end
 
 
@@ -124,6 +137,20 @@ board = [[47, 44, 71, 8, 88],
 new_game = BingoBoard.new(board)
 new_game.call
 new_game.check_column
-new_game.display_board
+# new_game.display_board
+new_game.create_board
 
 #Reflection
+
+# How difficult was pseudocoding this challenge? What do you think of your pseudocoding style?
+#   Pseudocoding this challenge wasn't especially difficult, but there were lots of parts. In fact, in pseudocoding the challenge, I saw some places where the outline provided made separate methods for accessing a value and then changing a value, and I simplified these two into one method. To keep from getting sunk in too much pseudocode at once, I would write pseudocode for one method, then actually code it, testing my work, rather than doing all the pseudocode at once. Since the methods are all independent, this allowed me to vary my style of thinking and working and made the problem seem less daunting.
+# What are the benefits of using a class for this challenge?
+#   Using a class allows us to collect all the related methods in one place and easily share instance variables between those methods to keep the game state. It also makes the code easier ot read and maintain, as the use of a class organizes all the accompanying variables and methods in one place and under one heading.
+# How can you access coordinates in a nested array?
+#   To access a nested array, you use multiple indexes, one for each array that you're travelling through. In the case of this challenge, we're pulling values from an array within another array, which means that the calls always look like @bingo_board[first array index][second array index].
+# What methods did you use to access and modify the array?
+# Give an example of a new method you learned while reviewing the Ruby docs. Based on what you see in the docs, what purpose does it serve, and how is it called?
+# How did you determine what should be an instance variable versus a local variable?
+#   I used instance variables only for those variables that I would need in multiple methods -- ones that were somehow an essential part of the object created by the class. For example, the tabular data of the board itself is needed in every method for one thing or another, so it works best as an instance variable (and would be difficult to implement otherwise). However, the array with the letters B I N G O is only used locally in the .call method, as we only need to call values from that array when we use that method, nowhere else. It can be thrown away as soon as the method has finished running.
+# What do you feel is most improved in your refactored solution?
+#   I really liked the shift I figured out to get rid of the case statement in order to access the columns during the .check_column method. It simplified a lot of code and streamlined away an unnecessary detour. The simplicity also got me thinking about how to use a .each instead of a for loop to perform the same work.
