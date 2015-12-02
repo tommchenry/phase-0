@@ -1,0 +1,39 @@
+Did you learn anything new about JavaScript or programming in general?
+  I learned that Javascript has nothing to do with Java, and that the name was more a marketing ploy than based on anything having to do with similarities in how they work. I also learned that Javascript is considered very liberal in what it will allow you to get away with and that this is part of why it can be very difficult to debug.
+Are there any concepts you feel uncomfortable with?
+  Not really. I still don't really have any idea what Node.js is or does, but I guess we'll probably get to that eventually.
+
+Ch. 1: Values, Types, and Operators
+Identify two similarities and two differences between JavaScript and Ruby syntax with regard to numbers, arithmetic, strings, booleans, and various operators.
+  One similarity between Javascript and Ruby syntax is that the math operators work the way you expect them to work from basic math -- + is plus, and - is minus. 5 + 2 adds five and two and produces the result 7. Interestingly, unlike Ruby, Javascript will return a float when you divide two integers, so 5/2 returns 2.5 in Javascript, but 2 in Ruby. Strings are written in quotes in both Ruby and Javascript, and the + sign will concatenate strings. Ruby and Javascript behave differently when it comes to attempting to multiply strings. "Twice" * 2 will return "TwiceTwice" in Ruby and NaN in Javascript.
+
+Ch. 2: Program Structure
+What is an expression?
+  An expression is any fragment of code that produces a value. Even values that are written literally, like 47 or "a string" are expressions.
+What is the purpose of semicolons in JavaScript? Are they always required?
+  A semicolon tells JavaScript that you have hit the end of a statement. Most statements need to be ended with a semicolon, but there are exceptions. These exceptions can be complicated and easy to screw up, so it's usually good practice to add them until you know what you're doing.
+What causes a variable to return undefined?
+  Asking for the value of an empty variable will return undefined.
+What does console.log do and when would you use it? What Ruby method(s) is this similar to?
+  Console.log outputs the resulting values from a statement or expression to the console. This is similar to p, print, or puts in Ruby, all of which print some information to the console.
+Describe while and for loops
+  A while loop is a loop that will continue running the block of code that its connected to while a given value is true. It can be easy to accidentally create an infinite loop with a while loop if you don't include some form of a break statement or something that modifies the value that the while loop is checking itself against each iteration. A for loop is a loop that runs for a specified number of times or duration. A counter is defined, checked against some boundary, and then modified after a complete pass through the code block. A for loop can also produce infinite loops if there are errors in the syntax that cause the counter to not increment or decrement correctly.
+What other similarities or differences between Ruby and JavaScript did you notice in this section?
+  Ruby and Javascript both rely on the same if/else model for flow control as well as using for and while loops. Javascript has an additional loop I hadn't encountered in Ruby: the do loop, which works very similarly to the while loop but is always guaranteed to run at least once. Ruby and Javascript also both can use the += operator as a more succinct way to update a variable's value based on its previous value.
+What are the differences between local and global variables in JavaScript?
+  Local variables are variables with a local scope. Their values are only available inside the function where it is created. Since you can create functions inside of other functions, it's possible to access a local variable in another function, but only if it's inside the function that initially defined that local variable. Global variables, on the other hand, are accessible anywhere and are declared outside of any function.
+When should you use functions?
+  You should use a function when you have a block of code, a kind of tiny subprogram, that you need to be able to run multiple times in different contexts. If you're repeating code, it's probably time to stop and look at whether or not you could be using some function to handle this calculation instead.
+What is a function declaration?
+  A function declaration works a lot like defining a method in Ruby: it's where you define the name of the function, any arguments it takes and the code block associated with that function. Additionally you can access a declared function before its declaration, because function declarations can be used anywhere in the scope of the code.
+What is the difference between using a dot and a bracket to look up a property? Ex. array.max vs array["max"]
+  Dot notation can has to access a property with the exact name listed with the dot in order to get the correct value. Bracket notation can access a property with a name computed in the brackets, e.g. test.["value" + 1].
+Create an object called me that stores your name, age, three favorite foods, and a quirk in your eloquent.js file.
+What is a JavaScript object with a name and value property similar to in Ruby?
+  A Javascript object with a name and value property is similar to a Ruby hash and its key-value pair.
+What are the biggest similarities and differences between JavaScript and Ruby?
+  One of the main changes is the differences in terminology between the two languages. Ruby divides fairly simply into objects and methods while many things that are objects in Ruby are just values in Javascript (numbers, strings, etc.) and Javascript also calls some of what Ruby would call methods functions. At their base, they do work very similarly, but the vocabulary shift -- even just having expressions and statements and functions -- is a bit intimidating. Also Javascript will use type coercion to attempt to fix TypeErrors on its own without your input, which seems something like magic (and could easily backfire).
+Was some of your Ruby knowledge solidified by learning another language? If so, which concepts?
+  Some of my knowledge did solidify, for example, that from a high-level perspective, both languages are really about taking some kind of value and acting on it to produce a different value. The action you're performing might have very many steps and the value might mean a gigantic nested series of objects, but the principle remains the same.
+How do you feel about diving into JavaScript after reading these chapters?
+  Fairly good, but I have a fair amount of JavaScript experience from my work prior to DBC, so it's not that intimidating to me.
