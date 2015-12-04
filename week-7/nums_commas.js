@@ -66,7 +66,7 @@ separateComma(10000000)
 
 // Reflection
 // What was it like to approach the problem from the perspective of JavaScript? Did you approach the problem differently?
-//  We approached the problem somewhat differently
+//   We approached the problem somewhat differently
 // What did you learn about iterating over arrays in JavaScript?
 // What was different about solving this problem in JavaScript?
 // What built-in methods did you find to incorporate in your refactored solution?
