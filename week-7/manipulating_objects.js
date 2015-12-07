@@ -1,6 +1,6 @@
- // Manipulating JavaScript Objects
+// Manipulating JavaScript Objects
 
-// I worked on this challenge: [by myself, with: ]
+// I worked on this challenge by myself.
 
 // There is a section below where you will write your code.
 
@@ -15,21 +15,28 @@ var terah = {
 }
 // __________________________________________
 // Write your code below.
-
-
-
-
-
-
-
-
-
+var adam = {
+  name: "Adam"
+}
+terah.spouse = adam;
+terah.weight = 125;
+delete terah.eyeColor;
+adam.spouse = terah;
+terah.children = {};
+terah.children.carson = {name: "Carson"};
+terah.children.carter = {name: "Carter"};
+terah.children.colton = {name: "Colton"};
+adam.children = terah.children;
 
 
 // __________________________________________
 // Reflection: Use the reflection guidelines
-//
-//
+// What tests did you have trouble passing? What did you do to make it pass? Why did that work?
+//  I got a little tripped up by adding the carson object into the children property because I overthought it. I originally tried to declare it as its own object using bracket notation. I wound up rereading the instructions and realizing that carson could be added as a property onto children driectly. It worked because it's simply creating a nested object within an object but from outside the original object.
+// How difficult was it to add and delete properties outside of the object itself?
+//  It's not very difficult to add and delete properties from outside the object. Delete is the only strange one since it takes a specific keyword, but adding works by just providing a series of coordinates in relation to the properties of an object that already exist.
+// What did you learn about manipulating objects in this challenge?
+//  I learned that nested objects can be added from outside the object itself and the syntax isn't more involved than updating the values of properties that already exist in the object.
 //
 //
 //
