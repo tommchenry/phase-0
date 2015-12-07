@@ -326,8 +326,11 @@ moveLeft();
 copMove(cop1);
 displayLevel(level);
 
-// Reflection
 
+
+
+
+// Reflection
 //What was the most difficult part of this challenge?
 //  The most difficult part of the challenge was probably the first element I worked on: trying to get the level information to export correctly to the console. Each instance of console.log ends with a newline, and for whatever reason, it took me a really long time to figure out that I could concatenate everything I was exporting and then use a single console.log to put it to the console correctly.
 // What did you learn about creating objects and functions that interact with one another?
@@ -336,11 +339,3 @@ displayLevel(level);
 //  I learned about Math.abs in order to return the absolute value of the expression following it in parentheses. This was important to return distance values in a way that could be used whether they were positive or negative. I mostly worked on trying to get used to constructor syntax.
 // How can you access and manipulate properties of objects?
 //  You can access and manipulate the properties of objects with either dot or bracket notation. Dot notation (myObject.property1) must refer to a specified property by its exact name. Bracket notation (myObject[property1]) can be used to construct a property name with an expression, allowing you to iterate through property values, for example.
-//
-//
-//
-//
-//
-//
-//
-//
