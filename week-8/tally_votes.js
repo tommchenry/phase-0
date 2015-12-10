@@ -1,7 +1,7 @@
 // Tally Votes in JavaScript Pairing Challenge.
 
-// I worked on this challenge with:
-// This challenge took me [#] hours.
+// I worked on this challenge with Calvin Lang.
+// This challenge took me 2.5 hours.
 
 // These are the votes cast by each student. Do not alter these objects here.
 var votes = {
@@ -44,12 +44,14 @@ var voteCount = {
 /* The name of each student receiving a vote for an office should become a property
 of the respective office in voteCount.  After Alex's votes have been tallied,
 voteCount would be ...
+
   var voteCount = {
     president: { Bob: 1 },
     vicePresident: { Devin: 1 },
     secretary: { Gail: 1 },
     treasurer: { Kerry: 1 }
   }
+
 */
 
 
@@ -63,29 +65,69 @@ var officers = {
 }
 
 // Pseudocode
-
+// FOR loop through votes
+//   FOR loop through each officer role
+//     IF that person exists in the voteCount object
+//       Add 1 to that person's property
+//     ELSE add that person as a new property with a value of 1
+// Sort the votecounts object by the value
+// Assign the first property in each of the officer properties to the officers object under the correct value
 
 // __________________________________________
 // Initial Solution
 
 
+// function voteCall(){
+//   for (var vote in votes){
+//     for (var people in votes[vote]){
+//       if ( voteCount[people].hasOwnProperty(votes[vote][people]) ) {
+//         var newPerson = votes[vote][people];
+//         voteCount[people][newPerson] += 1;
+//       } else {
+//         var newPerson = votes[vote][people];
+//         voteCount[people][newPerson] = 1;
+//       }
+//     }
+//   }
+//   for (var position in voteCount) {
+//     var votesCounted = Object.keys(voteCount[position]).sort(function(a,b){return voteCount[position][b]-voteCount[position][a]});
+//     officers[position] = votesCounted[0];
+//   }
+// }
 
-
-
-
+// voteCall();
 
 // __________________________________________
 // Refactored Solution
 
+function voteCall(){
+  for (var vote in votes){
+    for (var people in votes[vote]){
+      if ( voteCount[people].hasOwnProperty(votes[vote][people]) ) {
+        voteCount[people][votes[vote][people]] += 1;
+      } else {
+        voteCount[people][votes[vote][people]] = 1;
+      }
+    }
+  }
+  for (var position in voteCount) {
+    var votesCounted = Object.keys(voteCount[position]).sort(function(a,b){return voteCount[position][b]-voteCount[position][a]});
+    officers[position] = votesCounted[0];
+  }
+}
 
-
-
+voteCall();
 
 
 // __________________________________________
 // Reflection
 
-
+// What did you learn about iterating over nested objects in JavaScript?
+//  This challenge really drove home the fact that you can use bracket notation inside of other bracket notation. My pair and I really struggled to get the right property to pull out of the voteCount object in order to create it or add to it. Originally we got it working by creating a separate temporary variable, but it turns out we could just add this value inside an existing set of brackets.
+// Were you able to find useful methods to help you with this?
+//  We used .hasOwnProperty in order to return a Boolean value if the named property existed in the object. That name for a method isn't necessarily intuitive, but that's what it does. We also had to create a sort function that would return the property with the largest value. We also used Object.keys, which returns an array of the object's properties. Our sort function then sorts this array.
+// What concepts were solidified in the process of working through this challenge?
+//  The use of for..in loops really came together for me in this challenge. Originally we kept trying to use a for loop with a .length called on the object, but this doesn't work. Also the iteration variable that you use for a for..in loop will store the property name from the object, which means you have a way to interact with both the properties and their values as you proceed.
 
 
 
@@ -150,3 +192,7 @@ assert(
   "Ivy should be elected Treasurer.",
   "8. "
 )
+
+
+
+
