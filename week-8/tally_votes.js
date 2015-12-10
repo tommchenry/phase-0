@@ -1,3 +1,4 @@
+
 // Tally Votes in JavaScript Pairing Challenge.
 
 // I worked on this challenge with:
@@ -44,12 +45,14 @@ var voteCount = {
 /* The name of each student receiving a vote for an office should become a property
 of the respective office in voteCount.  After Alex's votes have been tallied,
 voteCount would be ...
+
   var voteCount = {
     president: { Bob: 1 },
     vicePresident: { Devin: 1 },
     secretary: { Gail: 1 },
     treasurer: { Kerry: 1 }
   }
+
 */
 
 
@@ -63,22 +66,58 @@ var officers = {
 }
 
 // Pseudocode
-
+// FOR loop through votes
+//   FOR loop through each officer role
+//     IF that person exists in the voteCount object
+//       Add 1 to that person's property
+//     ELSE add that person as a new property with a value of 1
+// Sort the votecounts object by the value
+// Assign the first property in each of the officer properties to the officers object under the correct value
 
 // __________________________________________
 // Initial Solution
 
 
+// function voteCall(){
+//   for (var vote in votes){
+//     for (var people in votes[vote]){
+//       if ( voteCount[people].hasOwnProperty(votes[vote][people]) ) {
+//         var newPerson = votes[vote][people];
+//         voteCount[people][newPerson] += 1;
+//       } else {
+//         var newPerson = votes[vote][people];
+//         voteCount[people][newPerson] = 1;
+//       }
+//     }
+//   }
+//   for (var position in voteCount) {
+//     var votesCounted = Object.keys(voteCount[position]).sort(function(a,b){return voteCount[position][b]-voteCount[position][a]});
+//     officers[position] = votesCounted[0];
+//   }
+// }
 
-
-
-
+// voteCall();
 
 // __________________________________________
 // Refactored Solution
 
+function voteCall(){
+  for (var vote in votes){
+    for (var people in votes[vote]){
+      if ( voteCount[people].hasOwnProperty(votes[vote][people]) ) {
+        voteCount[people][votes[vote][people]] += 1;
+      } else {
+        voteCount[people][votes[vote][people]] = 1;
+      }
+    }
+  }
+  for (var position in voteCount) {
+    var votesCounted = Object.keys(voteCount[position]).sort(function(a,b){return voteCount[position][b]-voteCount[position][a]});
+    officers[position] = votesCounted[0];
+  }
+}
 
-
+voteCall();
 
 
 
@@ -150,3 +189,7 @@ assert(
   "Ivy should be elected Treasurer.",
   "8. "
 )
+
+
+
+
