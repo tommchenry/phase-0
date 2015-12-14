@@ -81,9 +81,6 @@ WORDS = {
 # end
 
 
-
-
-
 # Refactored Solution
 
 def in_words(num)
@@ -93,28 +90,19 @@ def in_words(num)
   when 1
     phrase = WORDS[num]
   when 2
-    phrase += WORDS[(num_array[-2] + "0").to_i]
-    phrase += "-"
-    phrase += WORDS[(num_array[-1]).to_i]
+    phrase += WORDS[(num_array[-2] + "0").to_i] + "-" + WORDS[(num_array[-1]).to_i]
   when 3
-    phrase += WORDS[(num_array[-3]).to_i]
-    phrase += " "
-    phrase += WORDS[100]
-    phrase += " "
+    phrase += WORDS[(num_array[-3]).to_i] + " hundred "
     if num_array[-2].to_i < 2
        phrase += WORDS[(num_array[-2].to_s + num_array[-1].to_s).to_i]
     else
-      phrase += WORDS[(num_array[-2] + "0").to_i]
-      phrase += "-"
-      phrase += WORDS[(num_array[-1]).to_i]
+      phrase += WORDS[(num_array[-2] + "0").to_i] + "-" + WORDS[(num_array[-1]).to_i]
     end
   end
   p phrase
 end
 
-
 # Driver Code
-in_words(4)         # => "four"
 in_words(4)         # => "four"
 in_words(27)       # => "twenty seven"
 in_words(92)       # => "ninety two"
@@ -122,6 +110,13 @@ in_words(112)
 in_words(347)
 in_words(999)
 
-
-
 # Reflection
+
+# What concepts did you review or learn in this challenge?
+#   I learned about declaring my own constants (as the English words for these numbers won't change, but it would be a huge pain to declare the strings within the function), and I reviewed string concatenation and case-when statements.
+
+# What is still confusing to you about Ruby?
+#   I got really frustrated with this challenge because I felt like there was a more elegant solution out there, just outside my grasp, involving recursion. I could kind of make it out in words, but putting it in practice didn't work, and I wound up sinking a lot of time into it. It seems like you'd be able to break the integer up into an array and then keep calling it on itself until you hit the irregular numbers (less than twenty) before building it back up, but I couldn't make it happen in the time constraint.
+
+# What are you going to study to get more prepared for Phase 1?
+#   I plan to study more methods for collections and review things like recursion and simple recursion problems.
