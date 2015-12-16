@@ -1,7 +1,14 @@
 // Pseudocode
 // Input: an integer
 // Output: a string representing the integer in English
-
+// Create a blank string
+// Take in an integer and split it into three number long collection objects
+// IF the number is smaller than three places, split it into a three-number collection object with zeroes for any missing digits
+// FOR each three-number chunk
+// Check the hundreds place against the words list and add it to the blank string with the word for hundreds
+// Check the tens place against the words list and add it to the blank string
+// Check the ones list against the words list and add it to the blank string
+// Return the string
 
 var WORDS = {
   1: "one",
@@ -31,18 +38,36 @@ var WORDS = {
   70: "seventy",
   80: "eighty",
   90: "ninety",
-  100: "hundred"
 };
 
 function in_words(num){
-  // console.log(num);
-  console.log(WORDS[num]);
+  if (num.toString().length == 1){
+    return WORDS[num];
+  }
+  else if (num.toString().length == 2 && num <= 20){
+    return WORDS[num];
+  }
+  else {
+    num_array = num.toString().split("");
+    if (num_array.length == 2){
+      return WORDS[num_array.shift() + "0"] + " " + in_words(num_array.join(""));
+    }
+    if (num_array.length == 3){
+      return WORDS[num_array.shift()] + " hundred " + in_words(num_array.join(""));
+    }
+    if (num_array.length == 4){
+      return WORDS[num_array.shift()] + " thousand " + in_words(num_array.join(""));
+    }
+  }
 }
 
 
-in_words(4);
-in_words(27);
-in_words(92);
-in_words(112);
-in_words(347);
-in_words(999);
+
+console.log(in_words(4));
+console.log(in_words(19));
+console.log(in_words(27));
+console.log(in_words(92));
+console.log(in_words(112));
+console.log(in_words(347));
+console.log(in_words(999));
+console.log(in_words(3342));
