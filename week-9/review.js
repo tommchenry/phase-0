@@ -95,9 +95,13 @@ console.log(in_words(3342));
 
 // Reflection
 // - What concepts did you solidify in working on this challenge?
+//  I more tiptoed than solidified with this challenge by trying out some basic recursion. As for the actual solidified concepts, I'd say that I helped deepen my understanding of the similarities between the two languages. I also learned a bit more about bracket notation and how you can actually run methods within brackets in order to return the key you need.
 
 // - What was the most difficult part of this challenge?
+//  The most difficult part of the challenge was getting the first non-base case to recursively call correctly. Still, I learned a little bit about carefully limiting the cases at first until I got the syntax for the returns correct.
 
 // - Did you solve the problem in a new way this time?
+//  I tried to solve this problem in a slightly new way this time -- the way I kept attempting (and failing) to solve it in the Ruby version. After last week's technical blog entry on recursion, I wanted to try a basic recursive style solution. The solution is maybe impractical, given the number of special cases that are required, but it was entertaining to attempt.
 
 // - Was your pseudocode different from the Ruby version? What was the same and what was different?
+//  My pseudocode was very similar to my Ruby version because the way that I conceived of the basic problem of turning integers into strings was the same. What changed was the way I wanted to approach the operation by using a recursive function call.
