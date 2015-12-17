@@ -40,6 +40,29 @@ var WORDS = {
   90: "ninety",
 };
 
+// function in_words(num){
+//   if (num.toString().length == 1){
+//     return WORDS[num];
+//   }
+//   else if (num.toString().length == 2 && num <= 20){
+//     return WORDS[num];
+//   }
+//   else {
+//     var num_array = num.toString().split("");
+//     if (num_array.length == 2){
+//       return WORDS[num_array.shift() + "0"] + " " + in_words(num_array.join(""));
+//     }
+//     if (num_array.length == 3){
+//       return WORDS[num_array.shift()] + " hundred " + in_words(num_array.join(""));
+//     }
+//     if (num_array.length == 4){
+//       return WORDS[num_array.shift()] + " thousand " + in_words(num_array.join(""));
+//     }
+//   }
+// }
+
+// Refactored solution
+
 function in_words(num){
   if (num.toString().length == 1){
     return WORDS[num];
@@ -48,20 +71,18 @@ function in_words(num){
     return WORDS[num];
   }
   else {
-    num_array = num.toString().split("");
+    var special_words = [,,," hundred "," thousand "];
+    var num_array = num.toString().split("");
     if (num_array.length == 2){
       return WORDS[num_array.shift() + "0"] + " " + in_words(num_array.join(""));
     }
-    if (num_array.length == 3){
-      return WORDS[num_array.shift()] + " hundred " + in_words(num_array.join(""));
-    }
-    if (num_array.length == 4){
-      return WORDS[num_array.shift()] + " thousand " + in_words(num_array.join(""));
+    else{
+      return WORDS[num_array.shift()] + special_words[num_array.length + 1] + in_words(num_array.join(""));
     }
   }
 }
 
-
+// Driver Code
 
 console.log(in_words(4));
 console.log(in_words(19));
@@ -71,3 +92,12 @@ console.log(in_words(112));
 console.log(in_words(347));
 console.log(in_words(999));
 console.log(in_words(3342));
+
+// Reflection
+// - What concepts did you solidify in working on this challenge?
+
+// - What was the most difficult part of this challenge?
+
+// - Did you solve the problem in a new way this time?
+
+// - Was your pseudocode different from the Ruby version? What was the same and what was different?
